@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A482772F2D80046D9C1 /* AppDelegate.swift */; };
 		F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */; };
-		F5C65A4D2772F2D80046D9C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A4C2772F2D80046D9C1 /* ViewController.swift */; };
 		F5C65A502772F2D80046D9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A4E2772F2D80046D9C1 /* Main.storyboard */; };
-		F5C65A522772F2DA0046D9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A512772F2DA0046D9C1 /* Assets.xcassets */; };
 		F5C65A552772F2DA0046D9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A532772F2DA0046D9C1 /* LaunchScreen.storyboard */; };
+		F5C65A5D2772F2FB0046D9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */; };
+		F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6A2772F4740046D9C1 /* MainTabController.swift */; };
+		F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6C2772F5890046D9C1 /* FeedController.swift */; };
+		F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6E2772F5920046D9C1 /* SearchController.swift */; };
+		F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */; };
+		F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */; };
+		F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A742772F5C50046D9C1 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5C65A452772F2D80046D9C1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C65A482772F2D80046D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F5C65A4C2772F2D80046D9C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5C65A4F2772F2D80046D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F5C65A512772F2DA0046D9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5C65A542772F2DA0046D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5C65A562772F2DA0046D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		F5C65A6A2772F4740046D9C1 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		F5C65A6C2772F5890046D9C1 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		F5C65A6E2772F5920046D9C1 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		F5C65A742772F5C50046D9C1 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		F5C65A472772F2D80046D9C1 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				F5C65A692772F38D0046D9C1 /* Model */,
+				F5C65A682772F38C0046D9C1 /* View */,
+				F5C65A672772F38A0046D9C1 /* ViewModel */,
+				F5C65A662772F3880046D9C1 /* Controller */,
+				F5C65A642772F37E0046D9C1 /* API */,
+				F5C65A632772F37C0046D9C1 /* Utils */,
 				F5C65A482772F2D80046D9C1 /* AppDelegate.swift */,
 				F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */,
-				F5C65A4C2772F2D80046D9C1 /* ViewController.swift */,
 				F5C65A4E2772F2D80046D9C1 /* Main.storyboard */,
-				F5C65A512772F2DA0046D9C1 /* Assets.xcassets */,
+				F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */,
 				F5C65A532772F2DA0046D9C1 /* LaunchScreen.storyboard */,
 				F5C65A562772F2DA0046D9C1 /* Info.plist */,
 			);
 			path = InstagramClone;
+			sourceTree = "<group>";
+		};
+		F5C65A632772F37C0046D9C1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F5C65A642772F37E0046D9C1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F5C65A662772F3880046D9C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5C65A6A2772F4740046D9C1 /* MainTabController.swift */,
+				F5C65A6C2772F5890046D9C1 /* FeedController.swift */,
+				F5C65A6E2772F5920046D9C1 /* SearchController.swift */,
+				F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */,
+				F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */,
+				F5C65A742772F5C50046D9C1 /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5C65A672772F38A0046D9C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5C65A682772F38C0046D9C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5C65A692772F38D0046D9C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5C65A552772F2DA0046D9C1 /* LaunchScreen.storyboard in Resources */,
-				F5C65A522772F2DA0046D9C1 /* Assets.xcassets in Resources */,
+				F5C65A5D2772F2FB0046D9C1 /* Assets.xcassets in Resources */,
 				F5C65A502772F2D80046D9C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5C65A4D2772F2D80046D9C1 /* ViewController.swift in Sources */,
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
+				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,
+				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
 				F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */,
+				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
+				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
+				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
+				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
