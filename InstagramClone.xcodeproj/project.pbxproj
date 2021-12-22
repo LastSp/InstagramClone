@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
+		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
+		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
 		F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A482772F2D80046D9C1 /* AppDelegate.swift */; };
 		F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */; };
 		F5C65A502772F2D80046D9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A4E2772F2D80046D9C1 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F5C65A452772F2D80046D9C1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C65A482772F2D80046D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F59993CD2773840B00863EAB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F59993CE2773842100863EAB /* LoginController.swift */,
+				F59993D02773842B00863EAB /* RegistrationController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		F5C65A3C2772F2D80046D9C1 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +119,7 @@
 		F5C65A662772F3880046D9C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F59993CD2773840B00863EAB /* Auth */,
 				F5C65A6A2772F4740046D9C1 /* MainTabController.swift */,
 				F5C65A6C2772F5890046D9C1 /* FeedController.swift */,
 				F5C65A6E2772F5920046D9C1 /* SearchController.swift */,
@@ -125,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
+				F59993D22773909B00863EAB /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F59993D32773909B00863EAB /* CustomTextField.swift in Sources */,
+				F59993CF2773842100863EAB /* LoginController.swift in Sources */,
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
 				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,
 				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
@@ -216,6 +235,7 @@
 				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
+				F59993D12773842B00863EAB /* RegistrationController.swift in Sources */,
 				F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
