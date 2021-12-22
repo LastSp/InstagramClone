@@ -18,6 +18,8 @@
 		F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */; };
 		F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */; };
 		F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A742772F5C50046D9C1 /* ProfileController.swift */; };
+		F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A762773000F0046D9C1 /* FeedCell.swift */; };
+		F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A78277301E50046D9C1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		F5C65A742772F5C50046D9C1 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		F5C65A762773000F0046D9C1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		F5C65A78277301E50046D9C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		F5C65A632772F37C0046D9C1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F5C65A78277301E50046D9C1 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		F5C65A682772F38C0046D9C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
 				F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */,
 				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
+				F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */,
 				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
+				F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
