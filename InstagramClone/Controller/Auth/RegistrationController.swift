@@ -16,6 +16,7 @@ class RegistrationController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(handleProfilePhoto), for: .touchUpInside)
         return button
     }()
     
@@ -58,10 +59,7 @@ class RegistrationController: UIViewController {
     
     //MARK: - Helpers
     
-    @objc func handleShowLogin() {
-        navigationController?.popViewController(animated: true)
-    }
-    
+
     private func configureUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
@@ -95,6 +93,12 @@ class RegistrationController: UIViewController {
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
+    //MARK: - Actions
+    
+    @objc func handleShowLogin() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
@@ -107,6 +111,14 @@ class RegistrationController: UIViewController {
         }
         updateForm()
     }
+    
+    @objc func handleProfilePhoto() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+    }
 }
 
 //MARK: - FormViewModel
@@ -117,4 +129,22 @@ extension RegistrationController: FormViewModel {
         signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         signUpButton.isEnabled = viewModel.formIsVaild
     }
+}
+
+//MARK: - UINavigationControllerDelegate & UIImagePickerControllerDelegate
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 2
+        plusPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        self.dismiss(animated: true)
+    }
+    
+    
 }
