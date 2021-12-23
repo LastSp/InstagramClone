@@ -10,9 +10,10 @@
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
+		F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */; };
+		F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D62773A6E300863EAB /* AuthViewModel.swift */; };
 		F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A482772F2D80046D9C1 /* AppDelegate.swift */; };
 		F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */; };
-		F5C65A502772F2D80046D9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A4E2772F2D80046D9C1 /* Main.storyboard */; };
 		F5C65A552772F2DA0046D9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A532772F2DA0046D9C1 /* LaunchScreen.storyboard */; };
 		F5C65A5D2772F2FB0046D9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */; };
 		F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6A2772F4740046D9C1 /* MainTabController.swift */; };
@@ -29,10 +30,11 @@
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthenticationButton.swift; sourceTree = "<group>"; };
+		F59993D62773A6E300863EAB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F5C65A452772F2D80046D9C1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C65A482772F2D80046D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F5C65A4F2772F2D80046D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5C65A542772F2DA0046D9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5C65A562772F2DA0046D9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 				F5C65A632772F37C0046D9C1 /* Utils */,
 				F5C65A482772F2D80046D9C1 /* AppDelegate.swift */,
 				F5C65A4A2772F2D80046D9C1 /* SceneDelegate.swift */,
-				F5C65A4E2772F2D80046D9C1 /* Main.storyboard */,
 				F5C65A5C2772F2FB0046D9C1 /* Assets.xcassets */,
 				F5C65A532772F2DA0046D9C1 /* LaunchScreen.storyboard */,
 				F5C65A562772F2DA0046D9C1 /* Info.plist */,
@@ -133,6 +134,7 @@
 		F5C65A672772F38A0046D9C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F59993D62773A6E300863EAB /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 			children = (
 				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
 				F59993D22773909B00863EAB /* CustomTextField.swift */,
+				F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,7 +216,6 @@
 			files = (
 				F5C65A552772F2DA0046D9C1 /* LaunchScreen.storyboard in Resources */,
 				F5C65A5D2772F2FB0046D9C1 /* Assets.xcassets in Resources */,
-				F5C65A502772F2D80046D9C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +231,12 @@
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
 				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,
 				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
+				F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */,
 				F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */,
 				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
 				F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */,
 				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
+				F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
 				F59993D12773842B00863EAB /* RegistrationController.swift in Sources */,
@@ -243,14 +247,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F5C65A4E2772F2D80046D9C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5C65A4F2772F2D80046D9C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F5C65A532772F2DA0046D9C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -390,7 +386,6 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,7 +413,6 @@
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

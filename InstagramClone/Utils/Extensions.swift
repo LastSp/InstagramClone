@@ -1,10 +1,3 @@
-//
-//  Extensions.swift
-//  InstagramFirestoreTutorial
-//
-//  Created by Stephen Dowless on 6/19/20.
-//  Copyright © 2020 Stephan Dowless. All rights reserved.
-//
 
 import UIKit
 //import JGProgressHUD
@@ -135,5 +128,12 @@ extension UIView {
         guard let view = superview else { return }
         anchor(top: view.topAnchor, left: view.leftAnchor,
                bottom: view.bottomAnchor, right: view.rightAnchor)
+    }
+}
+
+extension String {
+    var isVaildEmail: Bool {
+        NSPredicate(format: "SELF MATCHES %@",
+                    "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
     }
 }
