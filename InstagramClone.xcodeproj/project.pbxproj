@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		970A7DA8AD02F6788DA242E8 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D830555451FDA1290E1ECA9 /* Pods_InstagramClone.framework */; };
 		F52E39E6277DD3DF001DD09A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F52E39E5277DD3DF001DD09A /* GoogleService-Info.plist */; };
+		F52E39E8277DDB0E001DD09A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39E7277DDB0E001DD09A /* ImageUploader.swift */; };
+		F52E39EA277DDB15001DD09A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39E9277DDB15001DD09A /* AuthService.swift */; };
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
@@ -33,6 +35,8 @@
 		58B50347ECE7C19302C9A89D /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CD95E9D52BEDF581EF966047 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		F52E39E5277DD3DF001DD09A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F52E39E7277DDB0E001DD09A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		F52E39E9277DDB15001DD09A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -72,7 +76,6 @@
 				58B50347ECE7C19302C9A89D /* Pods-InstagramClone.debug.xcconfig */,
 				CD95E9D52BEDF581EF966047 /* Pods-InstagramClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,6 +144,8 @@
 		F5C65A642772F37E0046D9C1 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F52E39E7277DDB0E001DD09A /* ImageUploader.swift */,
+				F52E39E9277DDB15001DD09A /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -312,6 +317,8 @@
 				F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
+				F52E39E8277DDB0E001DD09A /* ImageUploader.swift in Sources */,
+				F52E39EA277DDB15001DD09A /* AuthService.swift in Sources */,
 				F59993D12773842B00863EAB /* RegistrationController.swift in Sources */,
 				F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */,
 			);

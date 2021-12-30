@@ -12,6 +12,8 @@ class RegistrationController: UIViewController {
     
     private var viewModel = RegistrationViewModel()
     
+    private var profileImage: UIImage?
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
@@ -23,6 +25,8 @@ class RegistrationController: UIViewController {
     private let emailTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -40,6 +44,7 @@ class RegistrationController: UIViewController {
         let button = CustomAuthenticationButton(name: "Sign Up")
         button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.4)
         button.setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -99,6 +104,24 @@ class RegistrationController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text,
+        let password = passwordTextField.text,
+        let fullname = fullnameTextField.text,
+        let username = usernameTextField.text,
+        let profileImage = self.profileImage else { return}
+        
+        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, userName: username, profileImage: profileImage)
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                return
+            }
+            print("DEBUG: Successfully registered the user...")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
@@ -136,7 +159,7 @@ extension RegistrationController: FormViewModel {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
-        
+        profileImage = selectedImage
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor

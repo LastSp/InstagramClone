@@ -22,6 +22,8 @@ class LoginController: UIViewController {
     private let emailTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -36,6 +38,7 @@ class LoginController: UIViewController {
         button.isEnabled = false
         button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.4)
         button.setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
+        button.addTarget(self, action: #selector(handlelogIn), for: .touchUpInside)
         return button
     }()
     
@@ -57,6 +60,20 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureNotificationObservers()
+    }
+    
+    //MARK: - Actions
+    
+    @objc func handlelogIn() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthService.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to log user in \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     //MARK: - Helpers
