@@ -6,22 +6,29 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileHeader: UICollectionReusableView {
     //MARK: - Properties
     static let reuseIdentifier = "profileHeader"
     
+    var viewModel: ProfileHeaderViewModel? {
+        didSet {
+            configure()
+        }
+    }
+    
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "venom-7")
+        iv.backgroundColor = .lightGray
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+
         return iv
     }()
     
     private let nameLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Username"
         lb.font = .boldSystemFont(ofSize: 14)
         return lb
     }()
@@ -134,6 +141,13 @@ class ProfileHeader: UICollectionReusableView {
         let attributedString = NSMutableAttributedString(string: "\(value)\n", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
         attributedString.append(NSAttributedString(string: label, attributes: [.font: UIFont.systemFont(ofSize: 14)]))
         return attributedString
+    }
+    
+    private func configure() {
+        guard let viewModel = viewModel else { return }
+        nameLabel.text = viewModel.fullname
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        
     }
     
     //MARK: - Actions
