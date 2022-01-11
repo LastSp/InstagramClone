@@ -17,6 +17,8 @@
 		F52E3A02278D9288001DD09A /* Contsants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A01278D9288001DD09A /* Contsants.swift */; };
 		F52E3A04278D94CD001DD09A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A03278D94CD001DD09A /* User.swift */; };
 		F52E3A06278D9A64001DD09A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A05278D9A64001DD09A /* ProfileHeaderViewModel.swift */; };
+		F52E3A08278DB2D5001DD09A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A07278DB2D5001DD09A /* UserCell.swift */; };
+		F52E3A0A278DE786001DD09A /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A09278DE786001DD09A /* UserCellViewModel.swift */; };
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
@@ -49,6 +51,8 @@
 		F52E3A01278D9288001DD09A /* Contsants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contsants.swift; sourceTree = "<group>"; };
 		F52E3A03278D94CD001DD09A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F52E3A05278D9A64001DD09A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		F52E3A07278DB2D5001DD09A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		F52E3A09278DE786001DD09A /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				F59993D62773A6E300863EAB /* AuthViewModel.swift */,
 				F52E3A05278D9A64001DD09A /* ProfileHeaderViewModel.swift */,
+				F52E3A09278DE786001DD09A /* UserCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
 				F59993D22773909B00863EAB /* CustomTextField.swift */,
 				F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */,
+				F52E3A07278DB2D5001DD09A /* UserCell.swift */,
 				F52E39FE278CEA71001DD09A /* Profile */,
 			);
 			path = View;
@@ -330,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52E3A0A278DE786001DD09A /* UserCellViewModel.swift in Sources */,
 				F59993D32773909B00863EAB /* CustomTextField.swift in Sources */,
 				F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */,
 				F59993CF2773842100863EAB /* LoginController.swift in Sources */,
@@ -338,6 +345,7 @@
 				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
 				F52E3A02278D9288001DD09A /* Contsants.swift in Sources */,
 				F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */,
+				F52E3A08278DB2D5001DD09A /* UserCell.swift in Sources */,
 				F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */,
 				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
 				F52E3A04278D94CD001DD09A /* User.swift in Sources */,
