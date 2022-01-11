@@ -11,6 +11,8 @@
 		F52E39E6277DD3DF001DD09A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F52E39E5277DD3DF001DD09A /* GoogleService-Info.plist */; };
 		F52E39E8277DDB0E001DD09A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39E7277DDB0E001DD09A /* ImageUploader.swift */; };
 		F52E39EA277DDB15001DD09A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39E9277DDB15001DD09A /* AuthService.swift */; };
+		F52E39FB278CEA42001DD09A /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39FA278CEA42001DD09A /* ProfileCell.swift */; };
+		F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E39FC278CEA6E001DD09A /* ProfileHeader.swift */; };
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
@@ -37,6 +39,8 @@
 		F52E39E5277DD3DF001DD09A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F52E39E7277DDB0E001DD09A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		F52E39E9277DDB15001DD09A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F52E39FA278CEA42001DD09A /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		F52E39FC278CEA6E001DD09A /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 				4D830555451FDA1290E1ECA9 /* Pods_InstagramClone.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F52E39FE278CEA71001DD09A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F52E39FA278CEA42001DD09A /* ProfileCell.swift */,
+				F52E39FC278CEA6E001DD09A /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F59993CD2773840B00863EAB /* Auth */ = {
@@ -178,6 +191,7 @@
 				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
 				F59993D22773909B00863EAB /* CustomTextField.swift */,
 				F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */,
+				F52E39FE278CEA71001DD09A /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F59993D32773909B00863EAB /* CustomTextField.swift in Sources */,
+				F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */,
 				F59993CF2773842100863EAB /* LoginController.swift in Sources */,
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
 				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,
@@ -319,6 +334,7 @@
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
 				F52E39E8277DDB0E001DD09A /* ImageUploader.swift in Sources */,
 				F52E39EA277DDB15001DD09A /* AuthService.swift in Sources */,
+				F52E39FB278CEA42001DD09A /* ProfileCell.swift in Sources */,
 				F59993D12773842B00863EAB /* RegistrationController.swift in Sources */,
 				F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */,
 			);

@@ -13,7 +13,6 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllers()
-        logOut()
         checkIfUserIsLoggedIn()
     }
     
@@ -42,9 +41,9 @@ class MainTabController: UITabBarController {
     
     private func configureViewControllers() {
         
-        let layout = UICollectionViewFlowLayout()
+        let feedLayout = UICollectionViewFlowLayout()
         
-        let feed = templateNavigationViewController(unselectedImage: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, rootViewController: FeedController(collectionViewLayout: layout))
+        let feed = templateNavigationViewController(unselectedImage: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, rootViewController: FeedController(collectionViewLayout: feedLayout))
         
         let search = templateNavigationViewController(unselectedImage: UIImage(named: "search_unselected")!, selectedImage: UIImage(named: "search_selected")!, rootViewController: SearchController())
         
@@ -52,7 +51,9 @@ class MainTabController: UITabBarController {
         
         let notifications = templateNavigationViewController(unselectedImage: UIImage(named: "like_unselected")!, selectedImage: UIImage(named: "like_selected")!, rootViewController: NotificationsController())
         
-        let profile = templateNavigationViewController(unselectedImage: UIImage(named: "profile_unselected")!, selectedImage: UIImage(named: "profile_selected")!, rootViewController: ProfileController())
+        let profileLayout = UICollectionViewFlowLayout()
+
+        let profile = templateNavigationViewController(unselectedImage: UIImage(named: "profile_unselected")!, selectedImage: UIImage(named: "profile_selected")!, rootViewController: ProfileController(collectionViewLayout: profileLayout))
         
         viewControllers = [feed, search, select, notifications, profile]
         tabBar.tintColor = .black
