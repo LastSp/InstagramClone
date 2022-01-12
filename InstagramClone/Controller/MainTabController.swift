@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import YPImagePicker
 
 class MainTabController: UITabBarController {
     //MARK: - Properties
@@ -60,6 +61,8 @@ class MainTabController: UITabBarController {
     
     private func configureViewControllers(withUser user: User) {
         
+        self.delegate = self
+        
         let feedLayout = UICollectionViewFlowLayout()
         
         let feed = templateNavigationViewController(unselectedImage: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, rootViewController: FeedController(collectionViewLayout: feedLayout))
@@ -75,6 +78,20 @@ class MainTabController: UITabBarController {
         
         viewControllers = [feed, search, select, notifications, profile]
         tabBar.tintColor = .black
+    }
+    
+    func didFinishPickingMedia(_ picker: YPImagePicker) {
+        picker.didFinishPicking { items, _ in
+            picker.dismiss(animated: false) {
+                guard let selectedImage = items.singlePhoto?.image else { return }
+                let controller = UploadPostController()
+                controller.selectedImage = selectedImage
+                controller.delegate = self
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: false, completion: nil)
+            }
+        }
     }
     
     private func templateNavigationViewController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
@@ -93,4 +110,39 @@ extension MainTabController: AuthenticationDelegate {
         fetchUser()
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+
+extension MainTabController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let index = viewControllers?.firstIndex(of: viewController)
+        if index == 2 {
+            var configuration = YPImagePickerConfiguration()
+            configuration.library.mediaType = .photo
+            configuration.shouldSaveNewPicturesToAlbum = false
+            configuration.startOnScreen = .library
+            configuration.screens = [.library]
+            configuration.hidesStatusBar = false
+            configuration.hidesBottomBar  = false
+            configuration.library.maxNumberOfItems = 1
+            let picker = YPImagePicker(configuration: configuration)
+            
+            picker.modalPresentationStyle = .fullScreen
+            picker.view.backgroundColor = .white
+
+            present(picker, animated: true)
+            didFinishPickingMedia(picker)
+
+        }
+        return true
+    }
+}
+
+//MARK: - UploadPostControllerDelegate
+extension MainTabController: UploadPostControllerDelegate {
+    func controllerDidFinishUploadingPost(_ controller: UploadPostController) {
+        selectedIndex = 0
+        controller.dismiss(animated: true, completion: nil)
+    }
+
 }
