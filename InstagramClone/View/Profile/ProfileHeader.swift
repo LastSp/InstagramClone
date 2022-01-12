@@ -8,6 +8,10 @@
 import UIKit
 import SDWebImage
 
+protocol ProfileHeaderDelegate: AnyObject {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonForUser uid: String)
+}
+
 class ProfileHeader: UICollectionReusableView {
     //MARK: - Properties
     static let reuseIdentifier = "profileHeader"
@@ -17,6 +21,8 @@ class ProfileHeader: UICollectionReusableView {
             configure()
         }
     }
+    
+    weak var delegate: ProfileHeaderDelegate?
     
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -35,7 +41,7 @@ class ProfileHeader: UICollectionReusableView {
     
     private let editProfileFollowButton: UIButton = {
         let bt = UIButton(type: .system)
-        bt.setTitle("Edit Profile", for: .normal)
+        bt.setTitle("Loading", for: .normal)
         bt.titleLabel?.font = .boldSystemFont(ofSize: 14)
         bt.setTitleColor(.black, for: .normal)
         bt.layer.cornerRadius = 3
@@ -45,11 +51,10 @@ class ProfileHeader: UICollectionReusableView {
         return bt
     }()
     
-    private lazy var postLabel: UILabel = {
+    private lazy var postsLabel: UILabel = {
         let lb = UILabel()
         lb.numberOfLines = 0
         lb.textAlignment = .center
-        lb.attributedText = attributedText(value: 1, label: "posts")
         return lb
     }()
     
@@ -57,7 +62,6 @@ class ProfileHeader: UICollectionReusableView {
         let lb = UILabel()
         lb.numberOfLines = 0
         lb.textAlignment = .center
-        lb.attributedText = attributedText(value: 1, label: "followers")
         return lb
     }()
     
@@ -65,7 +69,6 @@ class ProfileHeader: UICollectionReusableView {
         let lb = UILabel()
         lb.numberOfLines = 0
         lb.textAlignment = .center
-        lb.attributedText = attributedText(value: 1, label: "following")
         return lb
     }()
     
@@ -105,7 +108,7 @@ class ProfileHeader: UICollectionReusableView {
         addSubview(editProfileFollowButton)
         editProfileFollowButton.anchor(top: nameLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 24, paddingLeft: 24, paddingRight: 24)
         
-        let stack = UIStackView(arrangedSubviews: [postLabel, followersLabel, followingLabel])
+        let stack = UIStackView(arrangedSubviews: [postsLabel, followersLabel, followingLabel])
         stack.distribution = .fillEqually
         
         addSubview(stack)
@@ -137,23 +140,28 @@ class ProfileHeader: UICollectionReusableView {
     
     
     //MARK: - Helpers
-    private func attributedText(value: Int, label: String) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: "\(value)\n", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        attributedString.append(NSAttributedString(string: label, attributes: [.font: UIFont.systemFont(ofSize: 14)]))
-        return attributedString
-    }
+
     
     private func configure() {
         guard let viewModel = viewModel else { return }
         nameLabel.text = viewModel.fullname
         profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        editProfileFollowButton.setTitle(viewModel.followingButtonText, for: .normal)
+        editProfileFollowButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
+        editProfileFollowButton.backgroundColor = viewModel.followButtonBackgroundColor
         
+        postsLabel.attributedText = viewModel.numberOfPosts
+        followersLabel.attributedText = viewModel.numberOfFollowers
+        followingLabel.attributedText = viewModel.numberOfFollowing
+
     }
     
     //MARK: - Actions
     
     @objc private func handleeditProfileFollowTapped() {
-        print("DEBUG: tapped handleeditProfileFollowTapped")
-
+        guard let viewModel = viewModel else { return }
+        delegate?.header(self, didTapActionButtonForUser: viewModel.user.uid)
     }
 }
+
+

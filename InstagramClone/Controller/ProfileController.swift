@@ -26,6 +26,8 @@ class ProfileController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        checkIfUserIsFollowed()
+        fetchUserStats()
     }
     
     //MARK: - Helpers
@@ -37,7 +39,19 @@ class ProfileController: UICollectionViewController {
     }
     
     //MARK: - API
-
+    private func checkIfUserIsFollowed() {
+        UserService.checkIfUserIfFollowed(uid: user.uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+            self.collectionView.reloadData()
+        }
+    }
+    
+    private func fetchUserStats() {
+        UserService.fetchUserStats(uid: user.uid) { stats in
+            self.user.stats = stats
+            self.collectionView.reloadData()
+        }
+    }
     
 }
 
@@ -63,6 +77,7 @@ extension ProfileController {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileHeader.reuseIdentifier, for: indexPath) as! ProfileHeader
         
         header.viewModel = ProfileHeaderViewModel(user: user)
+        header.delegate = self
         
         
         return header
@@ -88,3 +103,22 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - ProfileHeaderDelegate
+
+extension ProfileController:ProfileHeaderDelegate {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonForUser uid: String) {
+        if user.isCurrentUser {
+            print("this is a current user")
+        } else if user.isFollowed {
+            UserService.unfollow(uid: uid) { error in
+            self.user.isFollowed = false
+            self.collectionView.reloadData()
+            }
+        } else {
+            UserService.follow(uid: uid) { error in
+                self.user.isFollowed = true
+                self.collectionView.reloadData()
+            }
+        }
+    }
+}
