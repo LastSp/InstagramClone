@@ -24,6 +24,7 @@
 		F52E3A10278F3928001DD09A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A0F278F3928001DD09A /* PostService.swift */; };
 		F52E3A12278F451B001DD09A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A11278F451B001DD09A /* Post.swift */; };
 		F52E3A14278F4586001DD09A /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A13278F4586001DD09A /* UserStats.swift */; };
+		F52E3A16278F4A5E001DD09A /* PostVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */; };
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
@@ -63,6 +64,7 @@
 		F52E3A0F278F3928001DD09A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		F52E3A11278F451B001DD09A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F52E3A13278F4586001DD09A /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
+		F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVIewModel.swift; sourceTree = "<group>"; };
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				F59993D62773A6E300863EAB /* AuthViewModel.swift */,
 				F52E3A05278D9A64001DD09A /* ProfileHeaderViewModel.swift */,
 				F52E3A09278DE786001DD09A /* UserCellViewModel.swift */,
+				F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				F52E3A0A278DE786001DD09A /* UserCellViewModel.swift in Sources */,
 				F59993D32773909B00863EAB /* CustomTextField.swift in Sources */,
+				F52E3A16278F4A5E001DD09A /* PostVIewModel.swift in Sources */,
 				F52E3A0C278F235F001DD09A /* UploadPostController.swift in Sources */,
 				F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */,
 				F59993CF2773842100863EAB /* LoginController.swift in Sources */,

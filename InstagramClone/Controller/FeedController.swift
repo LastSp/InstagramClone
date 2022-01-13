@@ -10,12 +10,23 @@ import Firebase
 
 
 class FeedController: UICollectionViewController {
-    //MARK: - LifeCycle
+    //MARK: - Properties
+    private var posts = [Post]()
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
+        fetchPosts()
+    }
+    
+    //MARK: - API
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.refreshControl?.endRefreshing()
+            self.collectionView.reloadData()
+        }
     }
     
     //MARK: - Helpers
@@ -26,6 +37,10 @@ class FeedController: UICollectionViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(handlelogOut))
         navigationItem.title = "Feed"
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refresher
     }
     
     //MARK: - Actions
@@ -44,18 +59,24 @@ class FeedController: UICollectionViewController {
             self.present(nav, animated: true, completion: nil)
         }
     }
+    
+    @objc func handleRefresh() {
+        posts.removeAll()
+        fetchPosts()
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCell.reuseIdentifier, for: indexPath) as? FeedCell else {
             fatalError()
         }
+        cell.viewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
 }

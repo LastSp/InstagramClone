@@ -11,18 +11,23 @@ class FeedCell: UICollectionViewCell {
     //MARK: - Properties
     static let reuseIdentifier = "feedCell"
     
+    var viewModel: PostViewModel? {
+        didSet {
+            configure()
+        }
+    }
+    
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = UIImage(named: "venom-7")
+        iv.backgroundColor = .lightGray
         return iv
     }()
     
     private let usernameButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("venom", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         button.addTarget(self, action: #selector(didTapUsername), for: .touchUpInside)
@@ -34,7 +39,7 @@ class FeedCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        iv.image = UIImage(named: "venom-7")
+        iv.backgroundColor = .lightGray
         return iv
     }()
     
@@ -54,28 +59,25 @@ class FeedCell: UICollectionViewCell {
     
     private let shareButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "share"), for: .normal)
+        button.setImage(UIImage(named: "send2"), for: .normal)
         button.tintColor = .black
         return button
     }()
     
     private let likesLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 like"
         label.font = UIFont.boldSystemFont(ofSize: 13)
         return label
     }()
     
     private let captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some text post"
         label.font = UIFont.boldSystemFont(ofSize: 12)
         return label
     }()
     
     private let postTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 days ago"
         label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textColor = .lightGray
         return label
@@ -130,6 +132,17 @@ class FeedCell: UICollectionViewCell {
         
         addSubview(stackView)
         stackView.anchor(top: postImageView.bottomAnchor, width: 120, height: 50)
+    }
+    
+    func configure() {
+        guard let viewModel = viewModel else { return }
+        profileImageView.sd_setImage(with: viewModel.userProfileImageUrl, completed: nil)
+        usernameButton.setTitle(viewModel.username, for: .normal)
+        
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageUrl, completed: nil)
+        
+        likesLabel.text = viewModel.likesLabelText
     }
     
 }
