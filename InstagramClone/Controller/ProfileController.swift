@@ -11,6 +11,7 @@ class ProfileController: UICollectionViewController {
     
     //MARK: - Properties
     private var user: User
+    private var posts = [Post]()
     
     //MARK: - LifeCycle
     
@@ -28,6 +29,7 @@ class ProfileController: UICollectionViewController {
         configureCollectionView()
         checkIfUserIsFollowed()
         fetchUserStats()
+        fetchPosts()
     }
     
     //MARK: - Helpers
@@ -36,6 +38,13 @@ class ProfileController: UICollectionViewController {
         collectionView.backgroundColor = .white
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: ProfileCell.reuseIdentifier)
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileHeader.reuseIdentifier)
+    }
+    
+    func fetchPosts() {
+        PostService.fetchPosts(forUser: user.uid) { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+        }
     }
     
     //MARK: - API
@@ -57,17 +66,25 @@ class ProfileController: UICollectionViewController {
 
 //MARK: - UICollectionViewDelegate
 extension ProfileController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        controller.post = posts[indexPath.row]
+        controller.navigationItem.title = "Post"
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return posts.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCell.reuseIdentifier, for: indexPath) as? ProfileCell else {
             fatalError()
         }
+        let post = posts[indexPath.row]
+        cell.viewModel = PostViewModel(post: post)
         return cell
     }
     
