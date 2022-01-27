@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol FeedCellDelegate: AnyObject {
+    func cellWantsToShowComments(_ cell: FeedCell, wantsToShowCommentsFor post: Post)
+}
+
+
 class FeedCell: UICollectionViewCell {
     //MARK: - Properties
     static let reuseIdentifier = "feedCell"
+    
+    weak var delegate: FeedCellDelegate?
     
     var viewModel: PostViewModel? {
         didSet {
@@ -53,6 +60,7 @@ class FeedCell: UICollectionViewCell {
     private let commentButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "comment"), for: .normal)
+        button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         button.tintColor = .black
         return button
     }()
@@ -117,6 +125,13 @@ class FeedCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Actions
+    
+    @objc func didTapComments() {
+        guard let viewModel = viewModel else { return }
+        delegate?.cellWantsToShowComments(self, wantsToShowCommentsFor: viewModel.post)
     }
     
     //MARK: - Helpers

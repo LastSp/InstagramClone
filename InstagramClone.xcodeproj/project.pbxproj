@@ -25,6 +25,10 @@
 		F52E3A12278F451B001DD09A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A11278F451B001DD09A /* Post.swift */; };
 		F52E3A14278F4586001DD09A /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A13278F4586001DD09A /* UserStats.swift */; };
 		F52E3A16278F4A5E001DD09A /* PostVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */; };
+		F52E3A1827903249001DD09A /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A1727903249001DD09A /* CommentController.swift */; };
+		F52E3A1A2790331C001DD09A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A192790331C001DD09A /* CommentCell.swift */; };
+		F52E3A1C27903C64001DD09A /* CommentInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E3A1B27903C64001DD09A /* CommentInputAccessoryView.swift */; };
+		F575665127A1D38E00A6E46A /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F575665027A1D38E00A6E46A /* CommentViewModel.swift */; };
 		F59993CF2773842100863EAB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993CE2773842100863EAB /* LoginController.swift */; };
 		F59993D12773842B00863EAB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D02773842B00863EAB /* RegistrationController.swift */; };
 		F59993D32773909B00863EAB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D22773909B00863EAB /* CustomTextField.swift */; };
@@ -42,6 +46,8 @@
 		F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A742772F5C50046D9C1 /* ProfileController.swift */; };
 		F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A762773000F0046D9C1 /* FeedCell.swift */; };
 		F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A78277301E50046D9C1 /* Extensions.swift */; };
+		F5DDA9D527907579008E3938 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DDA9D427907579008E3938 /* CommentService.swift */; };
+		F5DDA9D727907C28008E3938 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DDA9D627907C28008E3938 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,10 @@
 		F52E3A11278F451B001DD09A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F52E3A13278F4586001DD09A /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 		F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVIewModel.swift; sourceTree = "<group>"; };
+		F52E3A1727903249001DD09A /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		F52E3A192790331C001DD09A /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		F52E3A1B27903C64001DD09A /* CommentInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccessoryView.swift; sourceTree = "<group>"; };
+		F575665027A1D38E00A6E46A /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		F59993CE2773842100863EAB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F59993D02773842B00863EAB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		F59993D22773909B00863EAB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -84,6 +94,8 @@
 		F5C65A742772F5C50046D9C1 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		F5C65A762773000F0046D9C1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F5C65A78277301E50046D9C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F5DDA9D427907579008E3938 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		F5DDA9D627907C28008E3938 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +199,7 @@
 				F52E39E9277DDB15001DD09A /* AuthService.swift */,
 				F52E39FF278D920D001DD09A /* UserService.swift */,
 				F52E3A0F278F3928001DD09A /* PostService.swift */,
+				F5DDA9D427907579008E3938 /* CommentService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -202,6 +215,7 @@
 				F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */,
 				F5C65A742772F5C50046D9C1 /* ProfileController.swift */,
 				F52E3A0B278F235F001DD09A /* UploadPostController.swift */,
+				F52E3A1727903249001DD09A /* CommentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +227,7 @@
 				F52E3A05278D9A64001DD09A /* ProfileHeaderViewModel.swift */,
 				F52E3A09278DE786001DD09A /* UserCellViewModel.swift */,
 				F52E3A15278F4A5E001DD09A /* PostVIewModel.swift */,
+				F575665027A1D38E00A6E46A /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,9 +236,11 @@
 			isa = PBXGroup;
 			children = (
 				F5C65A762773000F0046D9C1 /* FeedCell.swift */,
-				F59993D22773909B00863EAB /* CustomTextField.swift */,
 				F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */,
+				F59993D22773909B00863EAB /* CustomTextField.swift */,
+				F52E3A192790331C001DD09A /* CommentCell.swift */,
 				F52E3A07278DB2D5001DD09A /* UserCell.swift */,
+				F52E3A1B27903C64001DD09A /* CommentInputAccessoryView.swift */,
 				F52E39FE278CEA71001DD09A /* Profile */,
 			);
 			path = View;
@@ -235,6 +252,7 @@
 				F52E3A03278D94CD001DD09A /* User.swift */,
 				F52E3A11278F451B001DD09A /* Post.swift */,
 				F52E3A13278F4586001DD09A /* UserStats.swift */,
+				F5DDA9D627907C28008E3938 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,26 +372,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52E3A1C27903C64001DD09A /* CommentInputAccessoryView.swift in Sources */,
 				F52E3A0A278DE786001DD09A /* UserCellViewModel.swift in Sources */,
 				F59993D32773909B00863EAB /* CustomTextField.swift in Sources */,
 				F52E3A16278F4A5E001DD09A /* PostVIewModel.swift in Sources */,
 				F52E3A0C278F235F001DD09A /* UploadPostController.swift in Sources */,
 				F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */,
 				F59993CF2773842100863EAB /* LoginController.swift in Sources */,
+				F5DDA9D727907C28008E3938 /* Comment.swift in Sources */,
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
 				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,
 				F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */,
 				F52E3A14278F4586001DD09A /* UserStats.swift in Sources */,
 				F52E3A02278D9288001DD09A /* Contsants.swift in Sources */,
 				F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */,
+				F5DDA9D527907579008E3938 /* CommentService.swift in Sources */,
 				F52E3A08278DB2D5001DD09A /* UserCell.swift in Sources */,
 				F5C65A4B2772F2D80046D9C1 /* SceneDelegate.swift in Sources */,
+				F52E3A1A2790331C001DD09A /* CommentCell.swift in Sources */,
 				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
 				F52E3A04278D94CD001DD09A /* User.swift in Sources */,
 				F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */,
 				F52E3A0E278F28F1001DD09A /* InputTextView.swift in Sources */,
 				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
 				F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */,
+				F575665127A1D38E00A6E46A /* CommentViewModel.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,
 				F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */,
 				F52E39E8277DDB0E001DD09A /* ImageUploader.swift in Sources */,
@@ -383,6 +406,7 @@
 				F52E3A10278F3928001DD09A /* PostService.swift in Sources */,
 				F52E3A06278D9A64001DD09A /* ProfileHeaderViewModel.swift in Sources */,
 				F52E39FB278CEA42001DD09A /* ProfileCell.swift in Sources */,
+				F52E3A1827903249001DD09A /* CommentController.swift in Sources */,
 				F59993D12773842B00863EAB /* RegistrationController.swift in Sources */,
 				F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */,
 			);
@@ -522,11 +546,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58B50347ECE7C19302C9A89D /* Pods-InstagramClone.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4KSAG49HZ9;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -550,11 +574,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD95E9D52BEDF581EF966047 /* Pods-InstagramClone.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4KSAG49HZ9;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

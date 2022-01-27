@@ -46,7 +46,7 @@ class FeedController: UICollectionViewController {
             refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
             collectionView.refreshControl = refresher
 
-        }        
+        }
     }
     
     //MARK: - Actions
@@ -82,6 +82,8 @@ extension FeedController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCell.reuseIdentifier, for: indexPath) as? FeedCell else {
             fatalError()
         }
+        cell.delegate = self
+
         if let post = post {
             cell.viewModel = PostViewModel(post: post)
         } else {
@@ -102,4 +104,16 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
         height += 60
         return CGSize(width: width, height: height)
     }
+}
+
+
+//MARK: - FeedCellDelegate
+
+extension FeedController: FeedCellDelegate {
+    func cellWantsToShowComments(_ cell: FeedCell, wantsToShowCommentsFor post: Post) {
+        let controller = CommentController(post: post)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
 }
