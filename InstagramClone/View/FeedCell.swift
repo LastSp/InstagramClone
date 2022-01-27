@@ -8,7 +8,8 @@
 import UIKit
 
 protocol FeedCellDelegate: AnyObject {
-    func cellWantsToShowComments(_ cell: FeedCell, wantsToShowCommentsFor post: Post)
+    func cell(_ cell: FeedCell, wantsToShowCommentsFor post: Post)
+    func cell(_ cell: FeedCell, didLikePost post: Post)
 }
 
 
@@ -50,9 +51,10 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
     
-    private let likeButton: UIButton = {
+    var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "like_unselected"), for: .normal)
+        button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         button.tintColor = .black
         return button
     }()
@@ -131,7 +133,12 @@ class FeedCell: UICollectionViewCell {
     
     @objc func didTapComments() {
         guard let viewModel = viewModel else { return }
-        delegate?.cellWantsToShowComments(self, wantsToShowCommentsFor: viewModel.post)
+        delegate?.cell(self, wantsToShowCommentsFor: viewModel.post)
+    }
+    
+    @objc func didTapLike() {
+        guard let viewModel = viewModel else { return }
+        delegate?.cell(self, didLikePost: viewModel.post)
     }
     
     //MARK: - Helpers
@@ -156,8 +163,9 @@ class FeedCell: UICollectionViewCell {
         
         captionLabel.text = viewModel.caption
         postImageView.sd_setImage(with: viewModel.imageUrl, completed: nil)
-        
         likesLabel.text = viewModel.likesLabelText
+        likeButton.tintColor = viewModel.likesButtonTintColor
+        likeButton.setImage(viewModel.likesButtonImage, for: .normal)
     }
     
 }

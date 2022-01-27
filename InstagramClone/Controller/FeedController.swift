@@ -11,7 +11,11 @@ import Firebase
 
 class FeedController: UICollectionViewController {
     //MARK: - Properties
-    private var posts = [Post]()
+    private var posts = [Post]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     var post: Post?
     
@@ -25,10 +29,21 @@ class FeedController: UICollectionViewController {
     //MARK: - API
     func fetchPosts() {
         guard post == nil else { return }
+        
         PostService.fetchPosts { posts in
             self.posts = posts
             self.collectionView.refreshControl?.endRefreshing()
-            self.collectionView.reloadData()
+            self.checkIfUserLikedPosts()
+        }
+    }
+    
+    func checkIfUserLikedPosts() {
+        self.posts.forEach { post in
+            PostService.checkIfUserLikedPost(post: post) { didLike in
+                if let index = self.posts.firstIndex(where: {$0.postId == post.postId}) {
+                    self.posts[index].didLike = didLike
+                }
+            }
         }
     }
     
@@ -110,10 +125,26 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 //MARK: - FeedCellDelegate
 
 extension FeedController: FeedCellDelegate {
-    func cellWantsToShowComments(_ cell: FeedCell, wantsToShowCommentsFor post: Post) {
+    func cell(_ cell: FeedCell, wantsToShowCommentsFor post: Post) {
         let controller = CommentController(post: post)
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    func cell(_ cell: FeedCell, didLikePost post: Post) {
+        cell.viewModel?.post.didLike.toggle()
+        if post.didLike {
+            PostService.unlikePost(post: post) { _ in
+                cell.likeButton.setImage(UIImage(named: "like_unselected"), for: .normal)
+                cell.likeButton.tintColor = .black
+                cell.viewModel?.post.likes = post.likes - 1
+            }
+        } else {
+            PostService.likePost(post: post) { _ in
+                cell.likeButton.setImage(UIImage(named: "like_selected"), for: .normal)
+                cell.likeButton.tintColor = .red
+                cell.viewModel?.post.likes = post.likes + 1
+            }
+        }
+    }
     
 }
