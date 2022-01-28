@@ -10,6 +10,7 @@ import UIKit
 protocol FeedCellDelegate: AnyObject {
     func cell(_ cell: FeedCell, wantsToShowCommentsFor post: Post)
     func cell(_ cell: FeedCell, didLikePost post: Post)
+    func cell(_ cell: FeedCell, wantsToShowProfileFor uid: String)
 }
 
 
@@ -25,12 +26,15 @@ class FeedCell: UICollectionViewCell {
         }
     }
     
-    private let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
         iv.backgroundColor = .lightGray
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
+        iv.addGestureRecognizer(tap)
         return iv
     }()
     
@@ -38,7 +42,7 @@ class FeedCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
-        button.addTarget(self, action: #selector(didTapUsername), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showUserProfile), for: .touchUpInside)
         return button
     }()
     
@@ -141,11 +145,13 @@ class FeedCell: UICollectionViewCell {
         delegate?.cell(self, didLikePost: viewModel.post)
     }
     
-    //MARK: - Helpers
-    
-    @objc func didTapUsername() {
-        print("DEBUG: tapped didTapUsename")
+    @objc func showUserProfile() {
+        guard let viewModel = viewModel else { return }
+        delegate?.cell(self, wantsToShowProfileFor: viewModel.post.ownerUid)
     }
+
+    
+    //MARK: - Helpers
 
     private func configureActionButtons() {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
@@ -167,5 +173,7 @@ class FeedCell: UICollectionViewCell {
         likeButton.tintColor = viewModel.likesButtonTintColor
         likeButton.setImage(viewModel.likesButtonImage, for: .normal)
     }
+    
+
     
 }
