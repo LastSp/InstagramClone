@@ -36,6 +36,7 @@
 		F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */; };
 		F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D62773A6E300863EAB /* AuthViewModel.swift */; };
 		F5AE412F27A9A67B0067B96B /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE412E27A9A67B0067B96B /* NotificationViewModel.swift */; };
+		F5AE413127AAE2A20067B96B /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE413027AAE2A20067B96B /* ResetPasswordController.swift */; };
 		F5C276EB27A3DED500071F44 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C276EA27A3DED500071F44 /* NotificationCell.swift */; };
 		F5C276ED27A3ED3D00071F44 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C276EC27A3ED3D00071F44 /* Notification.swift */; };
 		F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A482772F2D80046D9C1 /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		F59993D427739A4100863EAB /* CustomAuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthenticationButton.swift; sourceTree = "<group>"; };
 		F59993D62773A6E300863EAB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F5AE412E27A9A67B0067B96B /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		F5AE413027AAE2A20067B96B /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		F5C276EA27A3DED500071F44 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		F5C276EC27A3ED3D00071F44 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F5C65A452772F2D80046D9C1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,7 @@
 			children = (
 				F59993CE2773842100863EAB /* LoginController.swift */,
 				F59993D02773842B00863EAB /* RegistrationController.swift */,
+				F5AE413027AAE2A20067B96B /* ResetPasswordController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				F52E39FD278CEA6E001DD09A /* ProfileHeader.swift in Sources */,
 				F59993CF2773842100863EAB /* LoginController.swift in Sources */,
 				F5DDA9D727907C28008E3938 /* Comment.swift in Sources */,
+				F5AE413127AAE2A20067B96B /* ResetPasswordController.swift in Sources */,
 				F5AE412F27A9A67B0067B96B /* NotificationViewModel.swift in Sources */,
 				F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */,
 				F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */,

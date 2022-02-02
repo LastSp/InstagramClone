@@ -19,7 +19,7 @@ class LoginController: UIViewController {
     
     private let iconImage: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "instagram_logo")
+        iv.image = UIImage(named: "Instagram_logo_white")
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -50,6 +50,7 @@ class LoginController: UIViewController {
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
         button.attributedTitle(firstPart: "Forgot your password? ", secondPart: "Get help signing in")
+        button.addTarget(self, action: #selector(handleForgotPassword), for: .touchUpInside)
         return button
     }()
     
@@ -81,13 +82,30 @@ class LoginController: UIViewController {
         }
     }
     
-    //MARK: - Helpers
+    @objc func handleForgotPassword() {
+        let controller = ResetPasswordController()
+        controller.delegate  = self
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        }
+        updateForm()
+    }
+    
     
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    //MARK: - Helpers
+
     
     private func configureUI() {
         view.backgroundColor = .white
@@ -120,14 +138,7 @@ class LoginController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
-    @objc func textDidChange(sender: UITextField) {
-        if sender == emailTextField {
-            viewModel.email = sender.text
-        } else if sender == passwordTextField {
-            viewModel.password = sender.text
-        }
-        updateForm()
-    }
+   
 }
 
 //MARK: - FormViewModel
@@ -138,4 +149,15 @@ extension LoginController: FormViewModel {
         loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         loginButton.isEnabled = viewModel.formIsVaild
     }
+}
+
+//MARK: - ResetPasswordControllerDelegate
+
+extension LoginController: ResetPasswordControllerDelegate {
+    func controllerDidSentResetPasswordLink(_ controller: ResetPasswordController) {
+        navigationController?.popViewController(animated: true)
+        self.showMessage(withTitle: "Success", message: "We sent a link to your email so you could reset the password")
+    }
+    
+    
 }
