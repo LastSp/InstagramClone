@@ -156,7 +156,6 @@ extension FeedController: FeedCellDelegate {
                 cell.viewModel?.post.likes = post.likes + 1
                 
                 
-                print("IN FEED, \(post.postId)")
                 NotificationsService.uploadNotifications(toUid: post.ownerUid,
                                                          fromUser: user,
                                                          type: .like,

@@ -172,6 +172,7 @@ class FeedCell: UICollectionViewCell {
         likesLabel.text = viewModel.likesLabelText
         likeButton.tintColor = viewModel.likesButtonTintColor
         likeButton.setImage(viewModel.likesButtonImage, for: .normal)
+        postTimeLabel.text = viewModel.timestamp
     }
     
 
