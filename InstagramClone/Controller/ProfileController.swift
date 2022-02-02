@@ -136,12 +136,14 @@ extension ProfileController:ProfileHeaderDelegate {
             self.user.isFollowed = false
             self.collectionView.reloadData()
             }
+            PostService.updateUserFeedAfterFollowingUser(user: user, didFollow: false)
         } else {
             UserService.follow(uid: user.uid) { error in
                 self.user.isFollowed = true
                 self.collectionView.reloadData()
                 
                 NotificationsService.uploadNotifications(toUid: user.uid, fromUser: currentUser, type: .follow, post: nil)
+                PostService.updateUserFeedAfterFollowingUser(user: user, didFollow: true)
             }
         }
     }
