@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 protocol ProfileHeaderDelegate: AnyObject {
-    func header(_ profileHeader: ProfileHeader, didTapActionButtonForUser uid: String)
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonForUser user: User)
 }
 
 class ProfileHeader: UICollectionReusableView {
@@ -160,7 +160,7 @@ class ProfileHeader: UICollectionReusableView {
     
     @objc private func handleeditProfileFollowTapped() {
         guard let viewModel = viewModel else { return }
-        delegate?.header(self, didTapActionButtonForUser: viewModel.user.uid)
+        delegate?.header(self, didTapActionButtonForUser: viewModel.user)
     }
 }
 
