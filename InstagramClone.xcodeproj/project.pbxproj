@@ -37,6 +37,7 @@
 		F59993D72773A6E300863EAB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59993D62773A6E300863EAB /* AuthViewModel.swift */; };
 		F5AE412F27A9A67B0067B96B /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE412E27A9A67B0067B96B /* NotificationViewModel.swift */; };
 		F5AE413127AAE2A20067B96B /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE413027AAE2A20067B96B /* ResetPasswordController.swift */; };
+		F5AE413327AC12C40067B96B /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE413227AC12C40067B96B /* ImageSelectorController.swift */; };
 		F5C276EB27A3DED500071F44 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C276EA27A3DED500071F44 /* NotificationCell.swift */; };
 		F5C276ED27A3ED3D00071F44 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C276EC27A3ED3D00071F44 /* Notification.swift */; };
 		F5C65A492772F2D80046D9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A482772F2D80046D9C1 /* AppDelegate.swift */; };
@@ -45,7 +46,6 @@
 		F5C65A6B2772F4740046D9C1 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6A2772F4740046D9C1 /* MainTabController.swift */; };
 		F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6C2772F5890046D9C1 /* FeedController.swift */; };
 		F5C65A6F2772F5920046D9C1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A6E2772F5920046D9C1 /* SearchController.swift */; };
-		F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */; };
 		F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */; };
 		F5C65A752772F5C50046D9C1 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A742772F5C50046D9C1 /* ProfileController.swift */; };
 		F5C65A772773000F0046D9C1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C65A762773000F0046D9C1 /* FeedCell.swift */; };
@@ -87,7 +87,8 @@
 		F59993D62773A6E300863EAB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F5AE412E27A9A67B0067B96B /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		F5AE413027AAE2A20067B96B /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
-		F5C276EA27A3DED500071F44 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		F5AE413227AC12C40067B96B /* ImageSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		F5C276EA27A3DED500071F44 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; tabWidth = 5; };
 		F5C276EC27A3ED3D00071F44 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F5C65A452772F2D80046D9C1 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C65A482772F2D80046D9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		F5C65A6A2772F4740046D9C1 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		F5C65A6C2772F5890046D9C1 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		F5C65A6E2772F5920046D9C1 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
 		F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		F5C65A742772F5C50046D9C1 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		F5C65A762773000F0046D9C1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -221,9 +221,9 @@
 			children = (
 				F59993CD2773840B00863EAB /* Auth */,
 				F5C65A6A2772F4740046D9C1 /* MainTabController.swift */,
+				F5AE413227AC12C40067B96B /* ImageSelectorController.swift */,
 				F5C65A6C2772F5890046D9C1 /* FeedController.swift */,
 				F5C65A6E2772F5920046D9C1 /* SearchController.swift */,
-				F5C65A702772F5A20046D9C1 /* ImageSelectorController.swift */,
 				F5C65A722772F5BD0046D9C1 /* NotificationsController.swift */,
 				F5C65A742772F5C50046D9C1 /* ProfileController.swift */,
 				F52E3A0B278F235F001DD09A /* UploadPostController.swift */,
@@ -409,10 +409,10 @@
 				F52E3A1A2790331C001DD09A /* CommentCell.swift in Sources */,
 				F5C65A732772F5BD0046D9C1 /* NotificationsController.swift in Sources */,
 				F52E3A04278D94CD001DD09A /* User.swift in Sources */,
+				F5AE413327AC12C40067B96B /* ImageSelectorController.swift in Sources */,
 				F5C276ED27A3ED3D00071F44 /* Notification.swift in Sources */,
 				F5C65A79277301E50046D9C1 /* Extensions.swift in Sources */,
 				F52E3A0E278F28F1001DD09A /* InputTextView.swift in Sources */,
-				F5C65A712772F5A20046D9C1 /* ImageSelectorController.swift in Sources */,
 				F59993D527739A4100863EAB /* CustomAuthenticationButton.swift in Sources */,
 				F575665127A1D38E00A6E46A /* CommentViewModel.swift in Sources */,
 				F5C65A6D2772F5890046D9C1 /* FeedController.swift in Sources */,

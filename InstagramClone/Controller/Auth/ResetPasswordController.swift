@@ -15,6 +15,7 @@ class ResetPasswordController: UIViewController {
     //MARK: - Properties
     
     private var viewModel = ResetPasswordViewModel()
+    var email: String?
     
     weak var delegate: ResetPasswordControllerDelegate?
     
@@ -54,6 +55,10 @@ class ResetPasswordController: UIViewController {
     
     func configureUI() {
         configureGradientLayer()
+        
+        emailTextField.text = email
+        viewModel.email = email
+        updateForm()
         
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 16, paddingLeft: 16)

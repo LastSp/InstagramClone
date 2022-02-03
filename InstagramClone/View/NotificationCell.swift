@@ -45,7 +45,7 @@ class NotificationCell: UITableViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.isUserInteractionEnabled = true
-        
+        iv.backgroundColor = .lightGray
         let tap = UITapGestureRecognizer(target: self, action: #selector(handlePostTapped))
         iv.addGestureRecognizer(tap)
         
@@ -123,12 +123,9 @@ class NotificationCell: UITableViewCell {
 
         profileImageView.sd_setImage(with: viewModel.profileImageUrl)
         infoLabel.attributedText = viewModel.notificationMessage
-        followButton.isHidden = viewModel.shouldHideFollowButton
-        if viewModel.shouldHidePostImage {
-            postImageView.isHidden = viewModel.shouldHidePostImage
-        } else {
-            postImageView.sd_setImage(with: viewModel.postImageUrl)
-        }
+        followButton.isHidden = !viewModel.shouldHidePostImage
+        postImageView.isHidden = viewModel.shouldHidePostImage
+        postImageView.sd_setImage(with: viewModel.postImageUrl)
         followButton.setTitle(viewModel.followButtonText, for: .normal)
         followButton.backgroundColor = viewModel.followButtonBackgroundColor
         followButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)

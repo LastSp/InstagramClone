@@ -61,7 +61,9 @@ class UploadPostController: UIViewController {
         navigationItem.title = "Upload Post"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .done, target: self, action: #selector(handleShare))
-        
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .black
+
         view.addSubview(photoimageView)
         photoimageView.setDimensions(height: 180, width: 180)
         photoimageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 10)
@@ -84,7 +86,7 @@ class UploadPostController: UIViewController {
     
     //MARK: - Actions
     @objc func handleCancel() {
-        
+        self.navigationController?.dismiss(animated: true)
     }
     
     @objc func handleShare() {

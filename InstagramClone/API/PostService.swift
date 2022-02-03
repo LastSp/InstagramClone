@@ -115,6 +115,7 @@ struct PostService {
             snapshot?.documents.forEach({ document in
                 fetchPost(with: document.documentID) { post in
                     posts.append(post)
+                    posts.sort(by: { $0.timeStamp.seconds > $1.timeStamp.seconds})
                     completion(posts)
                 }
             })

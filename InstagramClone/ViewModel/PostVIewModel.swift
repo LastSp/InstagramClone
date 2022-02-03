@@ -45,7 +45,7 @@ struct PostViewModel {
         return "\(likes) like"
     }
     
-    var timestamp: String {
+    var timestampString: String {
         return Date(timeIntervalSince1970: Double(post.timeStamp.seconds)).calendarTimeSinceNow()
     }
     
